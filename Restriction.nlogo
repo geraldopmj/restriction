@@ -31,7 +31,7 @@ to setup
   clear-all
   spawnEnv ;            chama a função para criar o ambiente
   spawnAgents ;         chama a função para criar os agentes
-  calcPatchsRatio ;     chama a função para calcular a razão dos patchs
+  calcPatchesRatio ;     chama a função para calcular a razão dos patchs
   reset-ticks
 end
 
@@ -84,7 +84,7 @@ end
 
 
 ; Função que vai ccalcular razão da quantidade de patches:
-to calcPatchsRatio
+to calcPatchesRatio
   let countColor7 count patches with [pcolor = 7]
   let countColor8 count patches with [pcolor = 8]
   let countColor9 count patches with [pcolor = 9]
@@ -108,11 +108,9 @@ end
 to agentMoviment
   ask turtles [
     let direction random 1
-    ifelse direction = 1[
+    if direction = 1[
       right (45 - random 90) ; define o angulo de virar randomico em um angulo de 47 graus
-      ] [
-      right (45 - random 90) ; define o angulo de virar randomico em um angulo de 47 graus
-    ]
+      ]
     forward 1  ; anda 1 a frente
   ]
 end
@@ -215,14 +213,6 @@ to countClass
       set lowerClass lowerClass + 1
     ]
   ]
-end
-
-
-
-to calcInequality
-
-  set inequalityIndex middleClass
-
 end
 
 ;....................................................................................######.##..##.#####.......................................................................................
